@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Course</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="My%20courses.html">My Courses</a></li>
+            <li><a href="#" class = "active">Add Course</a></li>
+            <li><a href="contact%20us.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    </header>
+<main>
+<section class="add-course">
+    <h2>Add Course</h2>
+
+    <form>
+        <label for="course-name">Course Name</label>
+        <select id="course-name" required>
+            <option value="">Choose Course</option>
+            <option>Web Development</option>
+            <option>Python Basics</option>
+            <option>Database Systems</option>
+            <option>Computer Networks</option>
+            <option>Artificial Intelligence</option>
+        </select>
+
+        <label for="instructor">Instructor</label>
+        <select id="instructor" required>
+            <option value="">Choose Instructor</option>
+            <option>Ahmed Ali</option>
+            <option>Sara Mohamed</option>
+            <option>Mona Ali</option>
+            <option>Karim Youssef</option>
+            <option>Omar Adel</option>
+        </select>
+
+        <label for="hours">Credit Hours (1 - 4)</label>
+        <input type="number" id="hours" min="1" max="4" required>
+
+        <label for="notes">Notes</label>
+        <textarea id="notes" rows="4"></textarea>
+
+        <button type="submit">Add Course</button>
+    </form>
+</section>
+</main>
+    <footer>
+        <div class="social-icons">
+  <a href="https://facebook.com" class="fab fa-facebook"></a>
+  <a href="https://instagram.com" class="fab fa-instagram"></a>
+  <a href="https://linkedin.com" class="fab fa-linkedin"></a>
+  <a href="https://youtube.com" class="fab fa-youtube"></a>
+</div>
+ <p style="margin-top: 5px;">&copy; 2026 Yusuf Mohamed Mahmoud. All rights reserved.</p>
+    </footer>
+</body>
+</html>

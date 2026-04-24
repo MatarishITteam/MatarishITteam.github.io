@@ -1,0 +1,402 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    font-family:'Poppins', sans-serif;
+    background:#F7F8F0;
+    color:#000;
+    line-height:1.6;
+    padding-bottom:90px;
+}
+
+/* Header */
+header{
+    position:sticky;
+    top:0;
+    width:100%;
+    background:#355872;
+    padding:15px 0;
+    z-index:1000;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+header nav{
+    width:90%;
+    margin:auto;
+}
+
+header nav ul{
+    display:flex;
+    list-style:none;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+header nav ul li a{
+    text-decoration:none;
+    color:#d9d9d9;
+    font-size:18px;
+    font-weight:bold;
+    padding:10px 15px;
+    display:block;
+    border-radius:6px;
+    transition:0.3s ease;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active{
+    background:rgba(255,255,255,0.15);
+    color:#fff;
+}
+
+/* Home Section */
+.content{
+    width:90%;
+    max-width:1100px;
+    margin:60px auto;
+    text-align:center;
+}
+
+.content h1{
+    font-size:42px;
+    color:#355872;
+    margin-bottom:25px;
+}
+
+.content p{
+    font-size:18px;
+    text-align:justify;
+    margin-bottom:25px;
+}
+
+/* Button */
+.content .btn{
+    display:inline-block;
+    padding:12px 25px;
+    background:#355872;
+    color:#fff;
+    text-decoration:none;
+    border-radius:6px;
+    transition:0.3s ease;
+}
+
+.content .btn:hover{
+    background:#2c4560;
+    transform:translateY(-3px);
+}
+
+/* Courses Section */
+.courses{
+    width:90%;
+    max-width:1100px;
+    margin:80px auto;
+    text-align:center;
+    scroll-margin-top:100px;
+    overflow-x:auto;
+}
+
+.courses h2{
+    font-size:32px;
+    color:#355872;
+    margin-bottom:30px;
+}
+
+.courses table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.courses th{
+    background:#355872;
+    color:#fff;
+    padding:15px;
+    font-size:18px;
+}
+
+.courses td{
+    padding:15px;
+    border:1px solid #ddd;
+    font-size:16px;
+}
+
+.courses tr:nth-child(even){
+    background:#f2f2f2;
+}
+
+.courses tr:hover{
+    background:#dce9f3;
+    transition:0.3s ease;
+}
+
+/* Footer */
+footer{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:#355872;
+    color:#fff;
+    text-align:center;
+    padding:15px 10px;
+}
+
+footer .social-icons{
+    margin-top:10px;
+}
+
+footer .social-icons a{
+    text-decoration:none;
+    color:#fff;
+    font-size:26px;
+    margin:0 10px;
+    transition:0.3s ease;
+}
+
+footer .social-icons a:hover{
+    opacity:0.7;
+    transform:scale(1.2);
+}
+
+
+.add-course{
+    width:90%;
+    max-width:500px;
+    margin:80px auto;
+    background:#ffffff;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.add-course h2{
+    text-align:center;
+    color:#355872;
+    margin-bottom:25px;
+    font-size:30px;
+}
+
+.add-course form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.add-course label{
+    font-size:17px;
+    font-weight:bold;
+    color:#355872;
+}
+
+.add-course select{
+    padding:12px;
+    font-size:16px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    outline:none;
+    transition:0.3s ease;
+}
+
+.add-course select:focus{
+    border-color:#355872;
+}
+
+.add-course button{
+    padding:12px;
+    background:#355872;
+    color:#ffffff;
+    border:none;
+    border-radius:6px;
+    font-size:17px;
+    cursor:pointer;
+    transition:0.3s ease;
+}
+
+.add-course button:hover{
+    background:#2c4560;
+    transform:translateY(-2px);
+}
+
+
+.contact-us{
+    width:90%;
+    max-width:600px;
+    margin:80px auto;
+    background:#ffffff;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.contact-us h2{
+    text-align:center;
+    color:#355872;
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.contact-info{
+    text-align:center;
+    font-size:16px;
+    color:#000;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.contact-us form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.contact-us label{
+    font-size:17px;
+    font-weight:bold;
+    color:#355872;
+}
+
+.contact-us input,
+.contact-us textarea{
+    padding:12px;
+    font-size:16px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    outline:none;
+    transition:0.3s ease;
+}
+
+.contact-us input:focus,
+.contact-us textarea:focus{
+    border-color:#355872;
+}
+
+.contact-us textarea{
+    resize:vertical;
+}
+
+.contact-us button{
+    padding:12px;
+    background:#355872;
+    color:#ffffff;
+    border:none;
+    border-radius:6px;
+    font-size:17px;
+    cursor:pointer;
+    transition:0.3s ease;
+}
+
+.contact-us button:hover{
+    background:#2c4560;
+    transform:translateY(-2px);
+}
+
+
+/* Tablet */
+@media (max-width:768px){
+
+    .content h1{
+        font-size:30px;
+    }
+
+    .content p{
+        font-size:16px;
+    }
+
+    .courses h2{
+        font-size:26px;
+    }
+
+    .courses th,
+    .courses td{
+        font-size:14px;
+        padding:10px;
+    }
+
+    header nav ul{
+        justify-content:center;
+    }
+}
+
+/* Mobile */
+@media (max-width:480px){
+
+    header nav ul{
+        flex-direction:column;
+        align-items:center;
+        gap:10px;
+    }
+
+    .content h1{
+        font-size:24px;
+    }
+
+    .content p{
+        font-size:14px;
+    }
+
+    .courses h2{
+        font-size:22px;
+    }
+
+    .courses th,
+    .courses td{
+        font-size:12px;
+        padding:8px;
+    }
+
+    footer{
+        font-size:14px;
+    }
+
+    footer .social-icons a{
+        font-size:22px;
+    }
+
+    .add-course{
+        padding:20px;
+    }
+
+    .add-course h2{
+        font-size:24px;
+    }
+
+    .add-course label{
+        font-size:15px;
+    }
+
+    .add-course select,
+    .add-course button{
+        font-size:14px;
+    }
+    .contact-us{
+        padding:20px;
+    }
+
+    .contact-us h2{
+        font-size:24px;
+    }
+
+    .contact-info{
+        font-size:14px;
+    }
+
+    .contact-us label{
+        font-size:15px;
+    }
+
+    .contact-us input,
+    .contact-us textarea,
+    .contact-us button{
+        font-size:14px;
+    }
+}
+
