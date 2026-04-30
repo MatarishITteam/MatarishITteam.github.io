@@ -1,0 +1,115 @@
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-image: url(./photoHome.jpeg);
+    background-position: 100%;
+    overflow: hidden;
+}
+nav {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: #F2CC8F;
+    border-radius: 15px;
+}
+nav a {
+    display: flex;
+    font-weight: bold;
+    font-size: 26px;
+    text-decoration: none;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    padding-right: 20px;
+
+}
+.signin {
+    padding: 12px;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 15px;
+    background-color: #E07A5F;
+}
+main{
+    justify-content: center;
+    align-items: center ;
+    margin-top: 60px;
+
+}
+main p,h2 {
+    text-align: center;
+    font-weight: bold;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    line-height: 14px;
+
+}
+main h2{
+    font-weight: bolder;
+    font-size: 2.1rem;
+}
+main p{
+    font-weight: bold    ;
+    font-size: 1.2rem;
+}
+.SB {
+    height: 12px;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    padding: 10px;
+    font-weight: bold;
+    margin-left: 620px;
+    margin-right: 620px;
+    font-size: 20px;
+    background-color: #E07A5F;
+    border: 1px solid #E07A5F;
+
+
+}
+.SB::placeholder {
+    color:black;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding-left: 2%;
+    opacity: 40%;
+}
+.active1{
+    text-decoration: underline;
+}
+footer {
+    display: flex;
+    justify-content: space-around;
+    border-radius: 5px;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    flex: 1;
+    position: absolute;
+    background-color:#F2CC8F;
+    border-radius: 15px;
+    opacity: 80%;
+
+}
+footer a {
+    display: flex;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    justify-content: center;
+    justify-content: space-evenly;
+    padding: 5px;
+}
+footer h2{
+    font-weight: bold;
+    font-size: 1.4rem;
+}
