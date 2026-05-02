@@ -9,13 +9,17 @@
 <body>
     <nav>
         <h1>YumYard</h1>
-        <div style="display: flex; gap: 60px; justify-content: center; margin-right: 20px;">
+        <div style="display: flex; gap: 60px; justify-content: center; margin-right: 20px; margin-left: 160px;">
             <a href="index.html">Home</a>
             <a href="Recipes.html">Recipes</a>
             <a href="About.html" class = "active3">About</a>
             <a href="Contact.html">Contact</a>
         </div>
-        <a href = "./yummy-signin.html" class ="signin">Sign in</a> 
+        <div style="display: grid; grid-template-columns: repeat(2,1fr); gap: 20px;">
+            <a href = "./yummy-signin.html" class ="signin">Sign in</a> 
+            <button id="themeToggle">🌙</button> 
+        </div>
+            
     </nav>
     <div class="about1">
         <h1 style="font-family: Arial, Helvetica, sans-serif;">YumYard is more than recipes <br> Its a way to cook better every day</h1>
@@ -36,5 +40,6 @@
         </div>
         <p style="font-size: 20px; font-weight: bold;">&copy; 2026</p>
     </footer>
+    <script src="themes.js"></script>
 </body>
 </html>

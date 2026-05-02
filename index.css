@@ -113,3 +113,58 @@ footer h2{
     font-weight: bold;
     font-size: 1.4rem;
 }
+
+
+
+
+
+#themeToggle{
+    padding: 12px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: #E07A5F;
+}
+body{
+    transition: 0.3s;
+}
+
+nav, footer, .signin, .SB, #themeToggle{
+    transition: 0.3s;
+}
+
+/* DARK MODE */
+body.dark{
+    background-image: url(./HomeDarkmode.png);
+    color: white;
+    margin: 0px;
+    padding: 0px;
+    background-position: 100%;
+    overflow: hidden;
+}
+
+body.dark nav,
+body.dark footer{
+    background-color: #2C2C2C;
+}
+
+body.dark nav a,
+body.dark footer a,
+body.dark h1,
+body.dark h2,
+body.dark p{
+    color: white;
+}
+
+body.dark .signin,
+body.dark .SB,
+body.dark #themeToggle{
+    background-color: #444;
+    color: white;
+    border: 1px solid #666;
+}
+
+body.dark .SB::placeholder{
+    color: #ccc;
+}

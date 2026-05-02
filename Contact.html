@@ -10,13 +10,17 @@
     <div>
         <nav>
             <h1 class="logo">YumYard</h1>
-                <div style="display: flex; gap: 60px; justify-content: center; margin-right: 20px;">
+                <div style="display: flex; gap: 60px; justify-content: center; margin-right: 20px; margin-left: 160px;">
                         <a href="index.html">Home</a>
                         <a href="Recipes.html">Recipes</a>
                         <a href="About.html">About</a>
                         <a href="Contact.html" class = "active4">Contact</a>
                 </div> 
-                <a href = "./yummy-signin.html" class ="signin">Sign in</a> 
+                <div style="display: grid; grid-template-columns: repeat(2,1fr); gap: 20px;">
+                    <a href = "./yummy-signin.html" class ="signin">Sign in</a> 
+                    <button id="themeToggle">🌙</button>
+                </div>
+                
         </nav>
     </div>
 
@@ -46,5 +50,6 @@
         </div>
         <p style="font-size: 20px; font-weight: bold;">&copy; 2026</p>
     </footer>  
+    <script src="themes.js"></script>
 </body>
 </html>
