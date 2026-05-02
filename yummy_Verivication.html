@@ -93,6 +93,11 @@
         .confirm-btn:hover {
             background: #6848e0;
         }
+        #errorMsg{
+            color:red;
+            font-size:14px;
+            margin:5px 0;
+}
     </style>
 </head>
 
@@ -109,16 +114,18 @@
                     style="font-family: 'Playfair Display', serif; font-size: 72px; font-weight: 900; color: #2B2118; margin: 0 0 4px 0; letter-spacing: 1px;">
                     Verification</h1>
 
+                <form id="verificationForm">
+                    <input type="text" id="code" placeholder="Enter Verification Code">
 
-                <input type="text" placeholder="Enter Verification Code" required>
+                    <p id="errorMsg"></p>
 
-                <button class="confirm-btn">Confirm</button>
-
-            </div>
+                    <button type="submit" class="confirm-btn">Confirm</button>
+</form>
+        </div>
         </div>
 
     </div>
-    <script src="validiation.js"></script>
+    <script src="./validiation_verifiction.js"></script>
 
 </body>
 </html>

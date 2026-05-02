@@ -102,13 +102,13 @@
       color:orangered;
       text-decoration: none;
 
-      .welcome{
-  color: blue;
-  margin-bottom: -10px;
-  font-size: 28px;
-}
+      
   }
-    
+    #errorMsg{
+    color:red;
+    font-size:14px;
+    margin:5px 0;
+}
 
   </style>
 </head>
@@ -124,13 +124,17 @@
 
     <h1 style="font-family: 'Playfair Display', serif; font-size: 72px; font-weight: 900; color: #2B2118; margin: 0 0 4px 0; letter-spacing: 1px;">Welcome</h1>
     <h2>Sign in</h2>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Enter Your Email">
+      <input type="password" id="password" placeholder="Enter Your Password">
 
-      <input type="email" placeholder="Enter Your Email" required>
-      <input type="password" placeholder="Enter Your Password" required>
+      <p id="errorMsg"></p>
 
       <a href="./yumyard_forgot_password.html" class="forgot">Forgot Your Password?</a>
 
-      <button class="confirm-btn">Confirm</button>
+      <button type="submit" class="confirm-btn">Confirm</button>
+    </form>
+      
 
       <p class="signup-text">
         Don’t have an account?
@@ -141,6 +145,6 @@
   </div>
 
 </div>
-<script src="validiation.js"></script>
+<script src="validiation_signin.js"></script>
 </body>
 </html>

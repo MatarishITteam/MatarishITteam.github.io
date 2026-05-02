@@ -108,7 +108,7 @@ nav button {
     font-weight: bold;
     font-size: 20px;
     border-radius: 8px;
-    background-color: #FB6107;
+    background-color: #E07A5F;
     border: none;
     color: white;
     cursor: pointer;
@@ -178,7 +178,8 @@ body.dark p{
 
 body.dark .signin,
 body.dark .SB,
-body.dark #themeToggle{
+body.dark #themeToggle,
+body.dark .contact-form button{
     background-color: #FB6107;
     color: white;
     border: 1px solid #666;

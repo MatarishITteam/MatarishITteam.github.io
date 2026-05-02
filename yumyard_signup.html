@@ -18,7 +18,7 @@
       height: 100vh;
     }
 
-    /* LEFT SIDE */
+
     .left {
       width: 50%;
       background-image: url(./regiester.png);
@@ -44,7 +44,6 @@
       margin: 0;
     }
 
-    /* RIGHT SIDE */
     .right {
       width: 50%;
       display: flex;
@@ -92,30 +91,37 @@
     .btn:hover {
       background-color: #e05500;
     }
+    #errorMsg{
+      color:red;
+      font-size:14px;
+      margin-bottom:15px;
+}
   </style>
 </head>
 <body>
 
 <div class="page">
 
-  <!-- LEFT -->
   <div class="left">
     
   </div>
 
-  <!-- RIGHT -->
   <div class="right">
     <h1 style="font-family: 'Playfair Display', serif; font-size: 72px; font-weight: 900; color: #2B2118; margin: 0 0 4px 0; letter-spacing: 1px;">Welcome</h1>
     <h2>Sign up</h2>
+    <form id="signupForm">
+      <input type="email" id="email" placeholder="Enter Your Email" />
+      <input type="password" id="password" placeholder="Enter Your Password" />
+      <input type="password" id="confirmPassword" placeholder="Confirm Your Password" />
 
-    <input type="email" placeholder="Enter Your Email" />
-    <input type="password" placeholder="Enter Your Password" />
-    <input type="password" placeholder="Confirm Your Password" />
+      <p id="errorMsg"></p>
 
-    <button class="btn">Confirm</button>
+      <button type="submit" class="btn">Confirm</button>
+</form>
+    
   </div>
 
 </div>
-<script src="validiation.js"></script>
+<script src="validiation_sigup.js"></script>
 </body>
 </html>
