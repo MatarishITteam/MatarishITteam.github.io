@@ -137,7 +137,8 @@ body.dark{
     padding: 0px;
     background-image: url(./HomeDarkmode.jpeg);
     background-position: 100%;
-    overflow: hidden;
+    background-color: #2C2C2C;
+    background-repeat: no-repeat;
 }
 
 body.dark nav,
