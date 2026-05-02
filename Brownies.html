@@ -7,7 +7,7 @@
     <title>Brownies</title>
     <style>
         body{
-            overflow: hidden;
+            overflow: scroll;
         }
         section div {
             display: grid;
@@ -61,6 +61,17 @@
             margin-top: 30px;
             line-height: 0px;
         }
+        iframe {
+            margin-left: 70px;
+        }
+
+        body.dark 
+        {
+            background-color: black;
+        }
+        body.dark ul li , body.dark ol li , body.dark section h2 , body.dark h1 {
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -108,7 +119,8 @@
     </section>
     <section>
         <h2 style="margin-left: 70px;">Link: </h2>
-        <a href="https://www.youtube.com/watch?v=Ak7qr8Pi7uY">https://www.youtube.com/watch?v=Ak7qr8Pi7uY</a>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Ak7qr8Pi7uY?si=4OZqXqGTt-0_5U6v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </section>
+    <script src="themes.js"></script>
 </body>
 </html>

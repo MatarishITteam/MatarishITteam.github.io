@@ -1,4 +1,3 @@
-
 body {
     margin: 0px;
     padding: 0px;
@@ -116,8 +115,6 @@ footer h2{
 
 
 
-
-
 #themeToggle{
     padding: 12px;
     border: none;
@@ -136,10 +133,9 @@ nav, footer, .signin, .SB, #themeToggle{
 
 /* DARK MODE */
 body.dark{
-    background-image: url(./HomeDarkmode.png);
-    color: white;
     margin: 0px;
     padding: 0px;
+    background-image: url(./HomeDarkmode.jpeg);
     background-position: 100%;
     overflow: hidden;
 }
@@ -160,11 +156,12 @@ body.dark p{
 body.dark .signin,
 body.dark .SB,
 body.dark #themeToggle{
-    background-color: #444;
+    background-color: #FB6107;
     color: white;
     border: 1px solid #666;
 }
 
 body.dark .SB::placeholder{
-    color: #ccc;
+    color: white;
+    opacity: 1;
 }

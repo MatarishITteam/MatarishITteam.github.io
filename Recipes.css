@@ -41,13 +41,16 @@ footer {
     align-items: center;
     height: 50px;
     width: 100%;
-    bottom: 0;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    bottom: -7px;
     left: 0;
     flex: 1;
-    position: absolute;
     background-color:#F2CC8F;
     border-radius: 15px;
     opacity: 80%;
+
 }
 footer a {
     display: flex;
@@ -67,10 +70,13 @@ section {
     display: grid;
     grid-template-columns: repeat(3 , 1fr);
     grid-template-rows: 1fr 1fr;
-    width: 110vh;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
     gap: 70px;
-    padding: 40px;
-    margin-left: 370px;
+    padding-bottom: 40px;
+    padding-top: 40px;
+
 }
 section div {
     display: flex;
@@ -134,6 +140,16 @@ body.dark{
     color: white;
 }
 
+body.dark section div 
+{
+    border: 2px solid white;
+}
+
+body.dark section div h3 a
+{
+    color: white;
+}
+
 body.dark nav,
 body.dark footer{
     background-color: #2C2C2C;
@@ -150,7 +166,7 @@ body.dark p{
 body.dark .signin,
 body.dark .SB,
 body.dark #themeToggle{
-    background-color: #444;
+    background-color: #FB6107;
     color: white;
     border: 1px solid #666;
 }
