@@ -15,7 +15,7 @@ nav {
     padding: 0px;
     box-sizing: border-box;
     background-color: #F2CC8F;
-    border-radius: 15px;
+    border-radius: 0 0 10px 10px;
 }
 nav a {
     display: flex;
@@ -94,7 +94,7 @@ footer {
     flex: 1;
     position: absolute;
     background-color:#F2CC8F;
-    border-radius: 15px;
+    border-radius: 10px 10px 0 0;
     opacity: 80%;
 
 }
@@ -144,7 +144,7 @@ body.dark{
 
 body.dark nav,
 body.dark footer{
-    background-color: #2C2C2C;
+    background-color: #a94003;
 }
 
 body.dark nav a,
@@ -160,7 +160,6 @@ body.dark .SB,
 body.dark #themeToggle{
     background-color: #FB6107;
     color: white;
-    border: 1px solid #666;
 }
 
 body.dark .SB::placeholder{

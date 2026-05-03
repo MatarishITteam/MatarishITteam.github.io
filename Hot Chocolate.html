@@ -71,6 +71,53 @@
         body.dark ul li , body.dark ol li , body.dark section h2 , body.dark h1 {
             color: white;
         }
+        table {
+            border: 2px solid #E07A5F;
+            width: 700px;
+            border-radius: 10px;
+            background-color: white;
+        }
+        table thead tr th {
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+        table tbody tr th {
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            background-color: white;
+            border-radius: 10px;
+        }
+        table tbody tr td {
+            text-align: center;
+            border: 1px solid #E07A5F;
+            background-color: #E07A5F;
+            border-radius: 10px;
+            font-size: 17px;
+        }
+        body.dark 
+        {
+            background-color: black;
+        }
+        body.dark ul li , body.dark ol li , body.dark section h2 , body.dark h1 {
+            color: white;
+        }
+        body.dark table thead tr th {
+            color: white;
+        }
+        body.dark table  {
+            border: 2px solid #FB6107;
+            background-color: black;
+        }
+
+        body.dark table tbody tr td 
+        {
+            border: 1px solid #FB6107;
+            background-color: #FB6107;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -110,8 +157,50 @@
         </ol>
     </section>
     <section>
-        <h2 style="margin-left: 70px;">Link: </h2>\
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/CNhMgun357E?si=PUzG4zWa13L9lLGV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <h2 style="margin-left: 70px;">Link: </h2>
+        <div style="display: grid; grid-template-columns: repeat(2 , 1fr); grid-template-rows: repeat(1 , 1fr);">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/CNhMgun357E?si=PUzG4zWa13L9lLGV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="4" >Nutrition Facts (Per Serving)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Nutrient:</th>
+                        <th>Amount:</th>
+                        <th>Nutrient:</th>
+                        <th>Amount:</th>
+                    </tr>
+                    <tr>
+                        <td>Calories</td>
+                        <td>200–250 kcal</td>
+                        <td>Saturated Fat</td>
+                        <td>5–7 g</td>
+                    </tr>
+                    <tr>
+                        <td>Protein</td>
+                        <td>6–8 g</td>
+                        <td>Cholesterol</td>
+                        <td>20–30 mg</td>
+                    </tr>
+                    <tr>
+                        <td>Carbohydrates</td>
+                        <td>25–30 g</td>
+                        <td>Sodium</td>
+                        <td>80–120 mg</td>
+                    </tr>
+                    <tr>
+                        <td>Fat</td>
+                        <td>10–12 g</td>
+                        <td>sugar</td>
+                        <td>20–25 g</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
     </section>
     <script src="themes.js"></script>
 </body>
