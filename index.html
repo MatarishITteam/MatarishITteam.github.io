@@ -20,11 +20,9 @@
                 </div>
                 <div style="display: grid; grid-template-columns: repeat(3,1fr); gap: 20px;">
                     <p style ="font-size: 17px;" id="userName" style="font-weight: bold;"></p>
-                       <a href="yummy-signin.html" id="loginBtn" class ="signin">Sign in</a>
+                    <a href="yummy-signin.html" id="loginBtn" class ="signin">Sign in</a>
                     <button id="logoutBtn" class="signin">Logout</button>
                     <button id="themeToggle">🌙</button> 
-                   
-                  
                 </div>
                 
         </nav>
@@ -32,7 +30,7 @@
     <main>
         <h2>Welcome To YumYard!</h2>
         <p>Your Guide To Every Recipe</p>
-    <section style="margin-top: 3%;"><input class="SB" type="text" placeholder="Search"></section>
+    <section style="margin-top: 3%;"><input class="SB" type="text" placeholder="Search" id="searchInput"></section>
     </main>
     <footer>
         <h2>Cook . Enjoy , Repeat</h2>
@@ -47,23 +45,21 @@
     <!-- scripts -->
     <script src="themes.js"></script>
 
-<script type="module">
-    const loginBtn = document.getElementById("loginBtn");
-    const logoutBtn = document.getElementById("logoutBtn");
-    const userName = document.getElementById("userName");
-    const responsesLink = document.getElementById("responsesLink");
+    <script type="module">
+        const loginBtn = document.getElementById("loginBtn");
+        const logoutBtn = document.getElementById("logoutBtn");
+        const userName = document.getElementById("userName");
+        const responsesLink = document.getElementById("responsesLink");
+        const isLoggedIn = localStorage.getItem("isLoggedIn");
+        const users = JSON.parse(localStorage.getItem("users")) || [];
+        const email = localStorage.getItem("loggedInUser"); 
+        const user = users.find(u => u.email === email);
 
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-    const email = localStorage.getItem("loggedInUser");
+        if (isLoggedIn === "true" && user) {
+            userName.textContent = user.username;
 
-    const user = users.find(u => u.email === email);
-
-    if (isLoggedIn === "true" && user) {
-        userName.textContent = user.username;
-
-        loginBtn.style.display = "none";
-        logoutBtn.style.display = "inline-block";
+            loginBtn.style.display = "none";
+            logoutBtn.style.display = "inline-block";
 
         if (user.username === "ywezwe") {
             responsesLink.style.display = "inline-block";
@@ -71,19 +67,19 @@
             responsesLink.style.display = "none";
         }
 
-    } else {
-        userName.textContent = "";
-        loginBtn.style.display = "inline-block";
-        logoutBtn.style.display = "none";
-        responsesLink.style.display = "none";
-    }
+        } else {
+            userName.textContent = "";
+            loginBtn.style.display = "inline-block";
+            logoutBtn.style.display = "none";
+            responsesLink.style.display = "none";
+        }
 
-    logoutBtn.addEventListener("click", () => {
-        localStorage.removeItem("isLoggedIn");
-        localStorage.removeItem("loggedInUser");
-        window.location.reload();
-    });
+        logoutBtn.addEventListener("click", () => {
+            localStorage.removeItem("isLoggedIn");
+            localStorage.removeItem("loggedInUser");
+            window.location.reload();
+        });
 </script>
-
+<script src="search.js" type="module"></script>
 </body>
 </html>
