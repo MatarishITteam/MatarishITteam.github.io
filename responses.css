@@ -1,7 +1,7 @@
 body {
     margin: 0px;
     padding: 0px;
-    background-image: url(./photoHome.jpeg);
+    
     background-position: 100%;
     overflow: hidden;
 }
@@ -28,6 +28,7 @@ nav a {
     padding-right: 20px;
 
 }
+
 .signin {
     padding: 12px;
     font-weight: bold;
@@ -56,29 +57,41 @@ main p{
     font-weight: bold    ;
     font-size: 1.2rem;
 }
-.SB {
-    height: 12px;
-    display: flex;
-    justify-content: center;
-    border-radius: 15px;
-    padding: 10px;
-    font-weight: bold;
-    margin-left: 620px;
-    margin-right: 620px;
-    font-size: 20px;
-    background-color: #E07A5F;
-    border: 1px solid #E07A5F;
-
-
+table {
+    width: 90%;
+    margin: 40px auto;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
-.SB::placeholder {
-    color:black;
+
+thead {
+    background-color: #FB6107;
+    color: white;
+}
+
+th {
+    padding: 15px;
+    text-align: left;
     font-size: 16px;
-    display: flex;
-    align-items: center;
-    padding-left: 2%;
-    opacity: 40%;
 }
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
 .active1{
     text-decoration: underline;
 }
@@ -139,9 +152,8 @@ nav, footer, .signin, .SB, #themeToggle{
 body.dark{
     margin: 0px;
     padding: 0px;
-    background-image: url(./HomeDarkmode.jpeg);
     background-position: 100%;
-    background-color: #2C2C2C;
+    background-color: #1E1E1E;
     background-repeat: no-repeat;
     
 }
@@ -170,4 +182,19 @@ body.dark #themeToggle{
 body.dark .SB::placeholder{
     color: white;
     opacity: 1;
+}
+
+body.dark table {
+    background-color: #1E1E1E;
+    color: white;
+}
+body.dark thead {
+    background-color: #FB6107;
+    color: white;
+}
+body.dark tbody tr:hover {
+    background-color: #333;
+}
+body.dark tbody tr td {
+    border-bottom: 1px solid #555;
 }

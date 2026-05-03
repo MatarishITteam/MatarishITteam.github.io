@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="Contact.css">
-    <title>Contact Page</title>
+    <link rel="stylesheet" href="responses.css">
+    <title>Responses</title>
 </head>
 <body>
     <div>
@@ -15,9 +15,9 @@
                         <a href="index.html">Home</a>
                         <a href="Recipes.html">Recipes</a>
                         <a href="About.html">About</a>
-                        <a href="Contact.html" class = "active4">Contact</a>
-                         <a href ="responses.html" id ="responsesLink" style="display: none;">Responses</a>
-                </div> 
+                        <a href="Contact.html">Contact</a>
+                        <a href ="responses.html" class = "active1" id ="responsesLink" style="display: none;">Responses</a>
+                </div>
                 <div style="display: grid; grid-template-columns: repeat(3,1fr); gap: 20px;">
                     <p style ="font-size: 17px;" id="userName" style="font-weight: bold;"></p>
                        <a href="yummy-signin.html" id="loginBtn" class ="signin">Sign in</a>
@@ -29,24 +29,21 @@
                 
         </nav>
     </div>
-
-    <span></span>
-    <div class="container">
-        <div class = "contact-image">
-            <img src="./Contact.jpg" alt="Contact Us">
-        </div>
-        <div class ="contact-form" id ="contactForm">
-            <h2>Need Help? Contact US</h2>
-            <form>
-                <input type="text" placeholder="Enter Your Name" id ="name">
-                <input type="email" placeholder="Enter Your Email" id ="email">
-                <textarea placeholder="Enter Your Message" id="message"></textarea>
-                <button>Send</button>
-            </form>
-        </div>
-        
-        </div>
-    </span>
+    <main>
+        <h2>Admin Responses</h2>
+        <p>Here you can view and manage user responses.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+            <tbody id="responsesTableBody">
+                <!-- Responses will be dynamically added here -->
+            </tbody>
+    </main>
     <footer>
         <h2>Cook . Enjoy , Repeat</h2>
         <div style="display: flex; gap: 140px; margin-right: 7%">
@@ -55,7 +52,9 @@
             <a href="https://twitter.com/" class="fab fa-x"></a>
         </div>
         <p style="font-size: 20px; font-weight: bold;">&copy; 2026</p>
-    </footer>  
+    </footer>
+
+    <!-- scripts -->
     <script src="themes.js"></script>
 
 <script type="module">
@@ -97,37 +96,29 @@
 </script>
 
 <script>
-const form = document.getElementById("contactForm");
+const tableBody = document.getElementById("responsesTableBody");
 
-form.addEventListener("submit", function(e){
-    e.preventDefault();
+// get responses from localStorage
+let responses = JSON.parse(localStorage.getItem("responses")) || [];
 
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
+// if no responses
+if (responses.length === 0) {
+    const row = document.createElement("tr");
+    row.innerHTML = `<td colspan="3">No responses yet</td>`;
+    tableBody.appendChild(row);
+} else {
+    responses.forEach(res => {
+        const row = document.createElement("tr");
 
-    if(!name || !email || !message){
-        alert("All fields are required");
-        return;
-    }
+        row.innerHTML = `
+            <td>${res.name}</td>
+            <td>${res.email}</td>
+            <td>${res.message}</td>
+        `;
 
-    // Get existing responses
-    let responses = JSON.parse(localStorage.getItem("responses")) || [];
-
-    // Add new response
-    responses.push({
-        name,
-        email,
-        message,
-        date: new Date().toLocaleString()
+        tableBody.appendChild(row);
     });
-
-    // Save
-    localStorage.setItem("responses", JSON.stringify(responses));
-
-    document.getElementById("successMsg").textContent = "Message sent!";
-    form.reset();
-});
+}
 </script>
 
 </body>

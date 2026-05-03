@@ -16,10 +16,15 @@
                         <a href="Recipes.html" class = "active2">Recipes</a>
                         <a href="About.html">About</a>
                         <a href="Contact.html">Contact</a>
+                         <a href ="responses.html" id ="responsesLink" style="display: none;">Responses</a>
                 </div> 
-                <div style="display: grid; grid-template-columns: repeat(2,1fr); gap: 20px;">
-                    <a href = "./yummy-signin.html" class ="signin">Sign in</a> 
-                    <button id="themeToggle">🌙</button>
+                <div style="display: grid; grid-template-columns: repeat(3,1fr); gap: 20px;">
+                    <p style ="font-size: 17px;" id="userName" style="font-weight: bold;"></p>
+                       <a href="yummy-signin.html" id="loginBtn" class ="signin">Sign in</a>
+                    <button id="logoutBtn" class="signin">Logout</button>
+                    <button id="themeToggle">🌙</button> 
+                   
+                  
                 </div>
                 
         </nav>
@@ -79,5 +84,44 @@
         <p style="font-size: 20px; font-weight: bold;">&copy; 2026</p>
     </footer>
     <script src="themes.js"></script>
+
+<script type="module">
+    const loginBtn = document.getElementById("loginBtn");
+    const logoutBtn = document.getElementById("logoutBtn");
+    const userName = document.getElementById("userName");
+    const responsesLink = document.getElementById("responsesLink");
+
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const email = localStorage.getItem("loggedInUser");
+
+    const user = users.find(u => u.email === email);
+
+    if (isLoggedIn === "true" && user) {
+        userName.textContent = user.username;
+
+        loginBtn.style.display = "none";
+        logoutBtn.style.display = "inline-block";
+
+        if (user.username === "ywezwe") {
+            responsesLink.style.display = "inline-block";
+        } else {
+            responsesLink.style.display = "none";
+        }
+
+    } else {
+        userName.textContent = "";
+        loginBtn.style.display = "inline-block";
+        logoutBtn.style.display = "none";
+        responsesLink.style.display = "none";
+    }
+
+    logoutBtn.addEventListener("click", () => {
+        localStorage.removeItem("isLoggedIn");
+        localStorage.removeItem("loggedInUser");
+        window.location.reload();
+    });
+</script>
+
 </body>
 </html>

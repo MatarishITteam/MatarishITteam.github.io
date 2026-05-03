@@ -1,21 +1,24 @@
-document.getElementById("forgotForm").addEventListener("submit", function(e){
+import { isValidEmail, showError, clearError } from "./utils.js";
 
-    e.preventDefault();
+const form = document.getElementById("forgotForm");
 
-    let email = document.getElementById("email").value.trim();
-    let errorMsg = document.getElementById("errorMsg");
+if (form) {
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-    errorMsg.textContent = "";
+        let email = document.getElementById("email").value.trim();
+        let errorMsg = document.getElementById("errorMsg");
 
-    if(email === ""){
-        errorMsg.textContent = "Email is required";
-        return;
-    }
+        clearError(errorMsg);
 
-    if(!email.includes("@") || !email.includes(".")){
-        errorMsg.textContent = "Enter a valid email";
-        return;
-    }
+        if (email === "") {
+            return showError(errorMsg, "Email is required");
+        }
 
-    alert("Verification code sent!");
-});
+        if (!isValidEmail(email)) {
+            return showError(errorMsg, "Enter a valid email");
+        }
+
+        alert("Verification code sent!");
+    });
+}

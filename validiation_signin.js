@@ -1,27 +1,44 @@
-document.getElementById("loginForm").addEventListener("submit", function(e){
+import { isValidEmail, showError, clearError } from "./utils.js";
 
-    e.preventDefault();
+const form = document.getElementById("loginForm");
 
-    let email = document.getElementById("email").value.trim();
-    let password = document.getElementById("password").value.trim();
-    let errorMsg = document.getElementById("errorMsg");
+if (form) {
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-    errorMsg.textContent = "";
+        let email = document.getElementById("email").value.trim();
+        let password = document.getElementById("password").value.trim();
+        let errorMsg = document.getElementById("errorMsg");
 
-    if(email === ""){
-        errorMsg.textContent = "Email is required";
-        return;
-    }
+        clearError(errorMsg);
 
-    if(!email.includes("@") || !email.includes(".")){
-        errorMsg.textContent = "Enter a valid email";
-        return;
-    }
+        if (email === "") return showError(errorMsg, "Email is required");
+        if (!isValidEmail(email)) return showError(errorMsg, "Enter a valid email");
+        if (password === "") return showError(errorMsg, "Password is required");
 
-    if(password === ""){
-        errorMsg.textContent = "Password is required";
-        return;
-    }
+        let users = JSON.parse(localStorage.getItem("users")) || [];
 
-    alert("Login Successful");
-});
+        // Find user
+        const user = users.find(user => user.email === email);
+
+        if (!user) {
+            return showError(errorMsg, "User not found");
+        }
+
+        if (!user.isVerified) {
+            return showError(errorMsg, "Please verify your account first");
+        }
+
+        if (user.password !== password) {
+            return showError(errorMsg, "Invalid credentials");
+        }
+
+        // Save session
+        localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("loggedInUser", email);
+
+        alert("Login Successful");
+
+        window.location.href = "index.html";
+    });
+}

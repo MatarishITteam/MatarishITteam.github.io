@@ -1,26 +1,38 @@
-document.getElementById("verificationForm").addEventListener("submit", function(e){
+import { isNumeric, showError, clearError } from "./utils.js";
 
-    e.preventDefault();
+const form = document.getElementById("verificationForm");
 
-    let code = document.getElementById("code").value.trim();
-    let errorMsg = document.getElementById("errorMsg");
+if (form) {
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-    errorMsg.textContent = "";
+        let code = document.getElementById("code").value.trim();
+        let errorMsg = document.getElementById("errorMsg");
 
-    if(code === ""){
-        errorMsg.textContent = "Verification code is required";
-        return;
-    }
+        clearError(errorMsg);
 
-    if(isNaN(code)){
-        errorMsg.textContent = "Code must contain numbers only";
-        return;
-    }
+        if (code === "") return showError(errorMsg, "Verification code is required");
+        if (!isNumeric(code)) return showError(errorMsg, "Code must contain numbers only");
+        if (code.length !== 6) return showError(errorMsg, "Code must be 6 digits");
 
-    if(code.length !== 6){
-        errorMsg.textContent = "Code must be 6 digits";
-        return;
-    }
+        if (code !== "000000") {
+            return showError(errorMsg, "Invalid verification code");
+        }
 
-    alert("Verification Successful!");
-});
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+        let email = localStorage.getItem("currentUserEmail");
+
+        // Find and update user
+        const userIndex = users.findIndex(user => user.email === email);
+
+        if (userIndex !== -1) {
+            users[userIndex].isVerified = true;
+            localStorage.setItem("users", JSON.stringify(users));
+        }
+
+        localStorage.removeItem("currentUserEmail");
+
+        alert("Verification Successful!");
+        window.location.href = "yummy-signin.html";
+    });
+}

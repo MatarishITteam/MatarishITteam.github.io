@@ -1,43 +1,48 @@
-document.getElementById("signupForm").addEventListener("submit", function(e){
+import { isValidEmail, isValidPassword, showError, clearError } from "./utils.js";
 
-    e.preventDefault();
+const form = document.getElementById("signupForm");
 
-    let email = document.getElementById("email").value.trim();
+if (form) {
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+    let username = document.getElementById("username").value.trim();
+        let email = document.getElementById("email").value.trim();
     let password = document.getElementById("password").value.trim();
-    let confirmPassword = document.getElementById("confirmPassword").value.trim();
-    let errorMsg = document.getElementById("errorMsg");
+        let confirmPassword = document.getElementById("confirmPassword").value.trim();
+        let errorMsg = document.getElementById("errorMsg");
 
-    errorMsg.textContent = "";
+        clearError(errorMsg);
 
-    if(email === ""){
-        errorMsg.textContent = "Email is required";
-        return;
-    }
+        if (email === "") return showError(errorMsg, "Email is required");
+        if (!isValidEmail(email)) return showError(errorMsg, "Enter a valid email");
+        if (password === "") return showError(errorMsg, "Password is required");
+        if (!isValidPassword(password)) return showError(errorMsg, "Password must be at least 8 characters");
+        if (confirmPassword === "") return showError(errorMsg, "Please confirm your password");
+        if (password !== confirmPassword) return showError(errorMsg, "Passwords do not match");
 
-    if(!email.includes("@") || !email.includes(".")){
-        errorMsg.textContent = "Enter a valid email";
-        return;
-    }
+        // Get users array
+        let users = JSON.parse(localStorage.getItem("users")) || [];
 
-    if(password === ""){
-        errorMsg.textContent = "Password is required";
-        return;
-    }
+        // Check if email already exists
+        const existingUser = users.find(user => user.email === email);
+        if (existingUser) {
+            return showError(errorMsg, "Email already registered");
+        }
 
-    if(password.length < 8){
-        errorMsg.textContent = "Password must be at least 8 characters";
-        return;
-    }
+        // Add new user
+        users.push({
+            username,
+            email,
+            password,
+            isVerified: false
+        });
 
-    if(confirmPassword === ""){
-        errorMsg.textContent = "Please confirm your password";
-        return;
-    }
+        localStorage.setItem("users", JSON.stringify(users));
 
-    if(password !== confirmPassword){
-        errorMsg.textContent = "Passwords do not match";
-        return;
-    }
+        // Save current user email for verification
+        localStorage.setItem("currentUserEmail", email);
 
-    alert("Sign Up Successful!");
-});
+        window.location.href = "yummy_Verivication.html";
+    });
+}

@@ -1,32 +1,33 @@
-document.getElementById("newPasswordForm").addEventListener("submit", function(e){
+import { isValidPassword, showError, clearError } from "./utils.js";
 
-    e.preventDefault();
+const form = document.getElementById("newPasswordForm");
 
-    let password = document.getElementById("password").value.trim();
-    let confirmPassword = document.getElementById("confirmPassword").value.trim();
-    let errorMsg = document.getElementById("errorMsg");
+if (form) {
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-    errorMsg.textContent = "";
+        let password = document.getElementById("password").value.trim();
+        let confirmPassword = document.getElementById("confirmPassword").value.trim();
+        let errorMsg = document.getElementById("errorMsg");
 
-    if(password === ""){
-        errorMsg.textContent = "Password is required";
-        return;
-    }
+        clearError(errorMsg);
 
-    if(password.length < 8){
-        errorMsg.textContent = "Password must be at least 8 characters";
-        return;
-    }
+        if (password === "") {
+            return showError(errorMsg, "Password is required");
+        }
 
-    if(confirmPassword === ""){
-        errorMsg.textContent = "Please confirm your password";
-        return;
-    }
+        if (!isValidPassword(password)) {
+            return showError(errorMsg, "Password must be at least 8 characters");
+        }
 
-    if(password !== confirmPassword){
-        errorMsg.textContent = "Passwords do not match";
-        return;
-    }
+        if (confirmPassword === "") {
+            return showError(errorMsg, "Please confirm your password");
+        }
 
-    alert("Password Updated Successfully!");
-});
+        if (password !== confirmPassword) {
+            return showError(errorMsg, "Passwords do not match");
+        }
+
+        alert("Password Updated Successfully!");
+    });
+}
