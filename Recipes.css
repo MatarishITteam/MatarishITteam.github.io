@@ -7,7 +7,7 @@ body {
 }
 @font-face {
     font-family: "Brush";
-    src: url("./BRUSHSCI.ttf") format("truetype");
+    src: url("./BRUSHSCI.TTF") format("truetype");
 }
 
 @font-face {
