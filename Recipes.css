@@ -7,7 +7,7 @@ body {
 }
 @font-face {
     font-family: "Brush";
-    src: url("./BRUSHSCI.TTF") format("truetype");
+    src: url("./BRUSHSCI.ttf") format("truetype");
 }
 
 @font-face {
@@ -15,7 +15,7 @@ body {
     src: url("./BrushScriptStd.otf") format("opentype");
 }
 .logo {
-    font-family: "Brush";
+    font-family: "BrushAlt", cursive;
 }
 nav {
     display: flex;
@@ -98,7 +98,7 @@ footer a {
     padding: 5px;
 }
 footer h2{
-    font-family: "Brush", cursive;
+    font-family: "BrushAlt", cursive;
 }
 section {
     display: grid;

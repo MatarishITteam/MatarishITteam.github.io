@@ -16,7 +16,7 @@ body {
     src: url("./BrushScriptStd.otf") format("opentype");
 }
 .logo {
-    font-family: "Brush";
+    font-family: "BrushAlt", cursive;
     
 }
 nav {
@@ -160,7 +160,7 @@ footer a {
     padding: 5px;
 }
 footer h2{
-    font-family: "Brush", cursive;
+    font-family: "BrushAlt", cursive;
 }
 
 

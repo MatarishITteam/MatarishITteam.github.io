@@ -28,7 +28,7 @@ nav {
     border-radius: 0 0 10px 10px;
 }
 .logo {
-    font-family: "Brush";
+    font-family: "BrushAlt", cursive;
     
 }
 nav a {
@@ -148,7 +148,7 @@ footer a {
 footer h2{
     font-weight: bold;
     font-size: 1.4rem;
-    font-family: "Brush", cursive;
+    font-family: "BrushAlt", cursive;
 }
 
 
