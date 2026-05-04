@@ -4,6 +4,16 @@ body {
     background-image: url(./photoHome.jpeg);
     background-position: 100%;
     overflow: hidden;
+     font-family: Arial, Helvetica, sans-serif;
+}
+@font-face {
+    font-family: "Brush";
+    src: url("./BRUSHSCI.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "BrushAlt";
+    src: url("./BrushScriptStd.otf") format("opentype");
 }
 nav {
     display: flex;
@@ -17,6 +27,10 @@ nav {
     background-color: #F2CC8F;
     border-radius: 0 0 10px 10px;
 }
+.logo {
+    font-family: "Brush";
+    
+}
 nav a {
     display: flex;
     font-weight: bold;
@@ -26,7 +40,14 @@ nav a {
     justify-content: center;
     align-items: center;
     padding-right: 20px;
+    transition-duration: 1s ;
 
+
+}
+nav a:hover {
+    
+    transform: translateY(-5px);
+    color: #2a2929;
 }
 .signin {
     padding: 12px;
@@ -34,7 +55,23 @@ nav a {
     font-size: 20px;
     border-radius: 15px;
     background-color: #E07A5F;
+    transition-duration: 1s ;
 }
+.signin:hover {
+    transform: translateY(-5px);
+    background-color: #e07b5ff3;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    transform: translateY(-5px);
+    background-color: #e07b5ff3;
+}
+
+
 main{
     justify-content: center;
     align-items: center ;
@@ -111,11 +148,9 @@ footer a {
 footer h2{
     font-weight: bold;
     font-size: 1.4rem;
+    font-family: "Brush", cursive;
 }
-button {
-    border: none;
-    cursor: pointer;
-}
+
 
 
 

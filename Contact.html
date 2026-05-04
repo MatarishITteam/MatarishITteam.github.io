@@ -56,73 +56,28 @@
     </footer>  
     <script src="themes.js"></script>
 
-<script type="module">
-    const loginBtn = document.getElementById("loginBtn");
-    const logoutBtn = document.getElementById("logoutBtn");
-    const userName = document.getElementById("userName");
-    const responsesLink = document.getElementById("responsesLink");
-
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-    const email = localStorage.getItem("loggedInUser");
-
-    const user = users.find(u => u.email === email);
-
-    if (isLoggedIn === "true" && user) {
-        userName.textContent = user.username;
-
-        loginBtn.style.display = "none";
-        logoutBtn.style.display = "inline-block";
-
-        if (user.username === "ywezwe") {
-            responsesLink.style.display = "inline-block";
-        } else {
-            responsesLink.style.display = "none";
-        }
-
-    } else {
-        userName.textContent = "";
-        loginBtn.style.display = "inline-block";
-        logoutBtn.style.display = "none";
-        responsesLink.style.display = "none";
-    }
-
-    logoutBtn.addEventListener("click", () => {
-        localStorage.removeItem("isLoggedIn");
-        localStorage.removeItem("loggedInUser");
-        window.location.reload();
-    });
-</script>
+<script src="auth.js"></script>
 
 <script>
 const form = document.getElementById("contactForm");
 
 form.addEventListener("submit", function(e){
     e.preventDefault();
-
     const name = document.getElementById("name").value.trim();
     const email = document.getElementById("email").value.trim();
     const message = document.getElementById("message").value.trim();
-
     if(!name || !email || !message){
         alert("All fields are required");
         return;
     }
-
-    // Get existing responses
     let responses = JSON.parse(localStorage.getItem("responses")) || [];
-
-    // Add new response
     responses.push({
         name,
         email,
         message,
         date: new Date().toLocaleString()
     });
-
-    // Save
     localStorage.setItem("responses", JSON.stringify(responses));
-
     document.getElementById("successMsg").textContent = "Message sent!";
     form.reset();
 });

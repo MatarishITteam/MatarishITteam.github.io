@@ -7,18 +7,31 @@ if (form) {
         e.preventDefault();
 
         let email = document.getElementById("email").value.trim();
-        let errorMsg = document.getElementById("errorMsg");
+        let error_Message = document.getElementById("errorMessage");
 
-        clearError(errorMsg);
+        clearError(error_Message);
 
         if (email === "") {
-            return showError(errorMsg, "Email is required");
+            return showError(error_Message, "Email is required");
         }
 
         if (!isValidEmail(email)) {
-            return showError(errorMsg, "Enter a valid email");
+            return showError(error_Message, "Enter a valid email");
         }
 
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+
+        const user = users.find(u => u.email === email);
+
+        if (!user) {
+            return showError(error_Message, "Email not found");
+        }
+
+    
+        localStorage.setItem("resetEmail", email);
+
         alert("Verification code sent!");
+
+        window.location.href = "yummy_Verivication.html";
     });
 }

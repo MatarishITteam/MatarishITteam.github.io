@@ -3,6 +3,19 @@ body {
     margin: 0px;
     padding: 0px;
     background-color: #F4F1DE;
+     font-family: Arial, Helvetica, sans-serif;
+}
+@font-face {
+    font-family: "Brush";
+    src: url("./BRUSHSCI.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "BrushAlt";
+    src: url("./BrushScriptStd.otf") format("opentype");
+}
+.logo {
+    font-family: "Brush";
 }
 nav {
     display: flex;
@@ -14,7 +27,6 @@ nav {
     padding: 0px;
     box-sizing: border-box;
     background-color: #F2CC8F;
-    border-radius: 15px;
     border-radius: 0 0 10px 10px;
 }
 nav a {
@@ -26,11 +38,14 @@ nav a {
     justify-content: center;
     align-items: center;
     padding-right: 20px;
+    transition-duration: 1s ;
+
 
 }
-button {
-    border: none;
-    cursor: pointer;
+nav a:hover {
+    
+    transform: translateY(-5px);
+    color: #2a2929;
 }
 .signin {
     padding: 12px;
@@ -38,6 +53,20 @@ button {
     font-size: 20px;
     border-radius: 15px;
     background-color: #E07A5F;
+    transition-duration: 1s ;
+}
+.signin:hover {
+    transform: translateY(-5px);
+    background-color: #e07b5ff3;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    transform: translateY(-5px);
+    background-color: #e07b5ff3;
 }
 footer {
     display: flex;
@@ -69,8 +98,7 @@ footer a {
     padding: 5px;
 }
 footer h2{
-    font-weight: bold;
-    font-size: 1.4rem;
+    font-family: "Brush", cursive;
 }
 section {
     display: grid;
@@ -103,6 +131,12 @@ section div div {
     width: 100.4%;
     height: 186px;
     
+}
+.recipe-card {
+    transition-duration: 1s;
+}
+.recipe-card:hover {
+    transform: translateY(-10px);
 }
 img {
     width: 100%;

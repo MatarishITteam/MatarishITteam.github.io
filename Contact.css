@@ -9,6 +9,16 @@ body {
     min-height: 100vh;
     padding: 0;
     background-color: #F4F1DE;
+    font-family: Arial, Helvetica, sans-serif;
+}
+@font-face {
+    font-family: "Brush";
+    src: url("./BRUSHSCI.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "BrushAlt";
+    src: url("./BrushScriptStd.otf") format("opentype");
 }
 .contact-image {
     height: 83.6vh;
@@ -29,6 +39,10 @@ nav {
     background-color: #F2CC8F;
     border-radius: 0 0 10px 10px;
 }
+.logo {
+    font-family: "Brush";
+    
+}
 nav a {
     display: flex;
     font-weight: bold;
@@ -38,28 +52,35 @@ nav a {
     justify-content: center;
     align-items: center;
     padding-right: 20px;
+    transition-duration: 1s ;
+
 
 }
-button {
-    border: none;
-    cursor: pointer;
+nav a:hover {
+    
+    transform: translateY(-5px);
+    color: #2a2929;
 }
-
 .signin {
     padding: 12px;
     font-weight: bold;
     font-size: 20px;
     border-radius: 15px;
     background-color: #E07A5F;
+    transition-duration: 1s ;
+}
+.signin:hover {
+    transform: translateY(-5px);
+    background-color: #e07b5ff3;
 }
 
-nav button {
-   
-    padding: 10px;
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 10px;
-    background-color: #E07A5F;
+button {
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    transform: translateY(-5px);
+    background-color: #e07b5ff3;
 }
 .container {
     display: grid;
@@ -129,6 +150,7 @@ footer {
     width: 100%;
     background-color: #F2CC8F;
     border-radius: 10px 10px 0 0;
+    opacity: 80%;
 }
 
 footer a {
@@ -141,6 +163,11 @@ footer a {
     justify-content: space-evenly;
     padding: 5px;
     
+}
+footer h2{
+
+
+    font-family: "Brush", cursive;
 }
 
 #themeToggle{
@@ -160,7 +187,7 @@ nav, footer, .signin, .SB, #themeToggle{
     transition: 0.3s;
 }
 
-/* DARK MODE */
+
 body.dark{
     background-color: #1E1E1E;
     background-image: none;

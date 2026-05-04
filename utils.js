@@ -6,7 +6,7 @@ export function isValidPassword(password) {
     return password.length >= 8;
 }
 
-export function isNumeric(value) {
+export function isNumber(value) {
     return /^\d+$/.test(value);
 }
 

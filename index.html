@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="index.css">
+    
     <title>Home Page</title>
 </head>
 <body>
@@ -42,44 +43,10 @@
         <p style="font-size: 20px; font-weight: bold;">&copy; 2026</p>
     </footer>
 
-    <!-- scripts -->
+
     <script src="themes.js"></script>
-
-    <script type="module">
-        const loginBtn = document.getElementById("loginBtn");
-        const logoutBtn = document.getElementById("logoutBtn");
-        const userName = document.getElementById("userName");
-        const responsesLink = document.getElementById("responsesLink");
-        const isLoggedIn = localStorage.getItem("isLoggedIn");
-        const users = JSON.parse(localStorage.getItem("users")) || [];
-        const email = localStorage.getItem("loggedInUser"); 
-        const user = users.find(u => u.email === email);
-
-        if (isLoggedIn === "true" && user) {
-            userName.textContent = user.username;
-
-            loginBtn.style.display = "none";
-            logoutBtn.style.display = "inline-block";
-
-        if (user.username === "ywezwe") {
-            responsesLink.style.display = "inline-block";
-        } else {
-            responsesLink.style.display = "none";
-        }
-
-        } else {
-            userName.textContent = "";
-            loginBtn.style.display = "inline-block";
-            logoutBtn.style.display = "none";
-            responsesLink.style.display = "none";
-        }
-
-        logoutBtn.addEventListener("click", () => {
-            localStorage.removeItem("isLoggedIn");
-            localStorage.removeItem("loggedInUser");
-            window.location.reload();
-        });
-</script>
+<script src="auth.js"></script>
+   
 <script src="search.js" type="module"></script>
 </body>
 </html>

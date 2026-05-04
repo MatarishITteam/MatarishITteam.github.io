@@ -30,42 +30,43 @@
         </nav>
     </div>
     <section>
-        <div style="margin-left: -120px;">
-            <div>   
+        
+        <div style="margin-left: -120px;" class ="recipe-card">
+            <div >   
                 <img src="./Roast Turkey.jpeg" width="100px" height="100px">
             </div>
             <h3><a href="./Roast Turkey.html" target="_blank">Roast Turkey</a></h3>
         </div>
 
-        <div>
+        <div class ="recipe-card">
             <div>
                 <img src="./Chocolate Cake.jpeg">
             </div>
             <h3><a href="./Chocolate Cake.html" target="_blank">Chocolate Cake</a></h3>
         </div>
 
-        <div style="margin-left: 120px;">
+        <div style="margin-left: 120px;" class ="recipe-card">
             <div>
                 <img src="./HotChocolate.jpeg">
             </div>
             <h3><a href="./Hot Chocolate.html" target="_blank">Hot Chocolate</a></h3>
         </div>
 
-        <div style="margin-left: -120px;">
+        <div style="margin-left: -120px;" class ="recipe-card">
             <div>
                 <img src="./Steak.jpeg">
             </div>
             <h3><a href="./Steak.html" target="_blank">Steak</a></h3>
         </div>
 
-        <div>
+        <div class ="recipe-card">
             <div>
                 <img src="./Brownies.jpeg">
             </div>
             <h3><a href="./Brownies.html" target="_blank">Brownies</a></h3>
         </div>
 
-        <div style="margin-left: 120px;">
+        <div style="margin-left: 120px;" class ="recipe-card">
             <div>
                 <img src="./Smoothie.jpeg">
             </div>
@@ -84,44 +85,7 @@
         <p style="font-size: 20px; font-weight: bold;">&copy; 2026</p>
     </footer>
     <script src="themes.js"></script>
-
-<script type="module">
-    const loginBtn = document.getElementById("loginBtn");
-    const logoutBtn = document.getElementById("logoutBtn");
-    const userName = document.getElementById("userName");
-    const responsesLink = document.getElementById("responsesLink");
-
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-    const email = localStorage.getItem("loggedInUser");
-
-    const user = users.find(u => u.email === email);
-
-    if (isLoggedIn === "true" && user) {
-        userName.textContent = user.username;
-
-        loginBtn.style.display = "none";
-        logoutBtn.style.display = "inline-block";
-
-        if (user.username === "ywezwe") {
-            responsesLink.style.display = "inline-block";
-        } else {
-            responsesLink.style.display = "none";
-        }
-
-    } else {
-        userName.textContent = "";
-        loginBtn.style.display = "inline-block";
-        logoutBtn.style.display = "none";
-        responsesLink.style.display = "none";
-    }
-
-    logoutBtn.addEventListener("click", () => {
-        localStorage.removeItem("isLoggedIn");
-        localStorage.removeItem("loggedInUser");
-        window.location.reload();
-    });
-</script>
+<script src="auth.js"></script>
 
 </body>
 </html>
