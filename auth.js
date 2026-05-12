@@ -14,7 +14,7 @@
             loginBtn.style.display = "none";
             logoutBtn.style.display = "inline-block";
 
-        if (user.username === "ywezwe") {
+        if (user.username === "admin") {
             responsesLink.style.display = "inline-block";
         } else {
             responsesLink.style.display = "none";
